@@ -48,8 +48,7 @@ node default {
     ensure  => file,
     owner   => 'root',
     group   => 'root',
-    mode    => '0640',
-    content => "Puppet is confusing.",
+    content => "Puppet helps ensure systems are at a known state.",
     }
     
 }
