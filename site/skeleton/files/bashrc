@@ -1,0 +1,10 @@
+#.bashrc
+
+#Source global definittions
+if [-f /etc/bashrc ]; then
+  ./etc/bashrc
+fi
+
+#User specific aliasses and functions
+
+cowsay "Hi there!"
