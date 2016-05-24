@@ -44,10 +44,12 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
   
-  file {'motd':
+  file {'etc/motd':
     ensure      => file,
-    path        => '/etc/motd',
-    ownership   => 'root',
-    content     => 'Puppet is confusing..': }
+    owerner     => 'root',
+    group       => 'root',
+    mode        => '640',
+    content     => 'Puppet is confusing..',
+    }
     
 }
