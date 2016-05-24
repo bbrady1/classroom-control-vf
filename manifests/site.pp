@@ -46,7 +46,7 @@ node default {
   
   file {'/etc/motd':
     ensure      => file,
-    owerner     => 'root',
+    owner       => 'root',
     group       => 'root',
     mode        => '640',
     content     => 'Puppet is confusing..',
