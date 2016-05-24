@@ -35,5 +35,20 @@ class ngnix {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
+    source  => 'puppet:///modules/ngnix/default.conf',
+    require => File['/etc/ngnix/conf.d'],
+  }
+  
+  file {'index html':
+    ensure => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source  => 'puppet:///modules/ngnix/index.html',
+    require => File['/var/www'],
+  }
+  
+  service {'ngnix':
+    ensure  => running,
   }
 }  
