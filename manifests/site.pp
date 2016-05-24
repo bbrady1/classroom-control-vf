@@ -48,8 +48,8 @@ node default {
     ensure  => file,
     owner   => 'root',
     group   => 'root',
-    mode    => '640',
-    content => "Puppet is confusing..",
+    mode    => '0640',
+    content => "Puppet is confusing.",
     }
     
 }
