@@ -45,11 +45,11 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   
   file {'/etc/motd':
-    ensure      => file,
-    owner       => 'root',
-    group       => 'root',
-    mode        => '640',
-    content     => 'Puppet is confusing..',
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '640',
+    content => "Puppet is confusing..",
     }
     
 }
