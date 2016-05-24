@@ -45,6 +45,7 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   
   include users 
+  include skeleton
   
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
     path    => '/usr/bin:/usr/local/bin',
