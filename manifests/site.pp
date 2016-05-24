@@ -48,6 +48,6 @@ node default {
     ensure      => file,
     path        => '/etc/motd',
     ownership   => 'root',
-    content     => 'Puppet is confusing..": }
+    content     => 'Puppet is confusing..': }
     
 }
