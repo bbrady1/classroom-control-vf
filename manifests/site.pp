@@ -49,6 +49,10 @@ node default {
   include memcached
   include nginx
   
+  #lab 15.1 begin
+  include users::admins
+  #lab 15.1 end
+  
   #lab 14.1 begin
   user { 'admin':
     ensure => present,
