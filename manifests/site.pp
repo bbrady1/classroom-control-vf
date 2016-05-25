@@ -49,9 +49,9 @@ node default {
   include memcached
   include nginx
   
-  if ${::virtual} != 'physical' {
+  if $::virtual != 'physical' {
     $vmname = capitalize($::virtual)
-    notify {'This is a $vname virtual machine'}
+    notify {'This is a $vmname virtual machine':}
   }
   
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
