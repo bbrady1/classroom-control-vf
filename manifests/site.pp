@@ -49,6 +49,17 @@ node default {
   include memcached
   include nginx
   
+  #lab 14.1 begin
+  user { 'admin':
+    ensure => present,
+  }
+
+  class { 'aliases':
+    admin   => 'admin',
+    require => User['admin'],
+  }
+  #lab 14.1 end
+  
   if $::virtual != 'physical' {
     $vmname = capitalize($::virtual)
     notify {"This is a $vmname virtual machine":}
