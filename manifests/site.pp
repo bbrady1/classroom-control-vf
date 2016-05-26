@@ -63,7 +63,12 @@ node default {
     require => User['admin'],
   }
   #lab 14.1 end
-  
+
+  #lab 17.1 start
+  $message = hiera('message')
+  notify {$message:}
+  #lab 17.1 end
+
   if $::virtual != 'physical' {
     $vmname = capitalize($::virtual)
     notify {"This is a $vmname virtual machine":}
